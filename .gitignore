@@ -1,0 +1,5 @@
+.idea/
+target/
+alarm.iml
+src/main/resources/alarm.properties
+src/main/resources/conf/contacts.json
