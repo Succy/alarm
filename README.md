@@ -24,11 +24,73 @@
 邮箱截图
 ![](static/email.jpg)
 
+## 使用方法
+在需要发送报警的地方，直接调用Alarm.error()等一系列方法即可，对于分布式而已，用法稍有不同，等后面支持了再做补充！下面给上Alarm中
+的可用报警方法:
+```java
+public static void info(String alarmName, String content) {
+    info(alarmName, content, null);
+}
+
+/**
+ * info级别警报
+ *
+ * @param alarmName 警报名称
+ * @param content   警报内容
+ */
+public static void info(String alarmName, String content, Throwable e) {
+    send(Level.INFO, alarmName, content, e);
+}
+
+public static void debug(String alarmName, String content) {
+    debug(alarmName, content, null);
+}
+
+/**
+ * debug级别警报
+ *
+ * @param alarmName 警报名称
+ * @param content   警报内容
+ */
+public static void debug(String alarmName, String content, Throwable e) {
+    send(Level.DEBUG, alarmName, content, e);
+}
+
+public static void warn(String alarmName, String content) {
+    warn(alarmName, content, null);
+}
+
+/**
+ * warn级别警报
+ *
+ * @param alarmName 警报名称
+ * @param content   警报内容
+ */
+public static void warn(String alarmName, String content, Throwable e) {
+    send(Level.WARN, alarmName, content, e);
+}
+
+public static void error(String alarmName, String content) {
+    error(alarmName, content, null);
+}
+
+/**
+ * error级别警报
+ *
+ * @param alarmName 警报名称
+ * @param content   警报内容
+ */
+public static void error(String alarmName, String content, Throwable e) {
+    send(Level.ERROR, alarmName, content, e);
+}
+
+```
+
 ## 配置文件详解
 全局的配置文件分为三类，一类是系统运行需要的一些配置项信息，也是主配置文件，叫alarm.properties，另外，还有一个是关于消息模板的
 模板文件，名字是随意的，存放的路径也不强制要求一定在classpath下，可以是磁盘的任意位置，只需要在alarm.properties中配置即可。第三
 种是接收者的配置文件，当然了，如果采用的是数据库存储，这个也不用关心了，接下来看看alarm.properties，就会一目了然了。
-```
+```properties
 # 配置报警系统名称，一旦配置之后，在邮件发送时，别名就是系统的名称，默认就是报警系统
 alarm.name=Succy报警系统
 
@@ -101,7 +163,7 @@ alarm.wechat.agentid=
 
 根据上面的定义，那么就很容易理解receivers的配置了，其实就是将要接收报警信息的组的名字配置进去，系统就会对这些组的人员进行一一发送。
 下面奉上contacts.json的配置项，其实名字也是随意的，在配置文件配置西下就好了，请详细看上面的alarm.properties就好
-```
+```json
 {
   "receivers": [
     "运维1组"
