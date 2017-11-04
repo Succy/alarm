@@ -2,3 +2,5 @@
 
 alarm.iml
 
+alarm-core/src/main/resources/conf
+alarm-core/src/main/resources/alarm.properties
