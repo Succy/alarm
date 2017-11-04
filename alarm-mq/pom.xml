@@ -32,7 +32,7 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
-                    <encoding>utf8</encoding>
+                    <encoding>utf-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -41,14 +41,13 @@
                 <version>2.4</version>
                 <configuration>
                     <excludes>
-                        <include>logback.xml</include>
-                        <include>alarm.properties</include>
-                        <include>mq-config.properties</include>
+                        <exclude>logback.xml</exclude>
+                        <exclude>alarm.properties</exclude>
+                        <exclude>mq-config.properties</exclude>
                     </excludes>
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 
 </project>
