@@ -5,6 +5,7 @@ import cn.succy.alarm.sender.Sender;
 import cn.succy.alarm.sender.SenderFactory;
 import cn.succy.alarm.template.TemplateModel;
 import com.xiaoleilu.hutool.date.DateTime;
+import com.xiaoleilu.hutool.util.NetUtil;
 import com.xiaoleilu.hutool.util.StrUtil;
 import com.xiaoleilu.hutool.util.ThreadUtil;
 import org.slf4j.Logger;
@@ -109,13 +110,8 @@ public class Alarm {
         model.setException(e);
 
         // 获取当前机器的Ip
-        try {
-            InetAddress address = InetAddress.getLocalHost();
-            String hostAddress = address.getHostAddress();
-            model.setHost(hostAddress);
-        } catch (UnknownHostException e1) {
-            logger.error(e1.getMessage());
-        }
+        String localhostStr = NetUtil.getLocalhostStr();
+        model.setHost(localhostStr);
 
         String traceStack = (e == null) ? ThreadUtil.getStackTraceElement(6).toString()
                 : e.getStackTrace()[0].toString();

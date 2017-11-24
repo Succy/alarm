@@ -11,7 +11,7 @@ import cn.succy.alarm.Alarm;
 public class AlarmTest {
 
     public static void main(String[] args) {
-        Alarm.debug("发送微信+邮箱测试", "运维一组，suchan可以收到");
+        Alarm.debug("微信测试", "后端全部可以收到");
     }
 
 }

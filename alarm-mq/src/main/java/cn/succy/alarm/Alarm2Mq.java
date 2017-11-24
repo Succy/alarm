@@ -5,6 +5,7 @@ import cn.succy.alarm.template.TemplateModel;
 import cn.succy.mq.producer.Producer;
 import cn.succy.mq.producer.QueueProducer;
 import com.xiaoleilu.hutool.date.DateTime;
+import com.xiaoleilu.hutool.util.NetUtil;
 import com.xiaoleilu.hutool.util.ThreadUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -90,13 +91,8 @@ public class Alarm2Mq {
                 : e.getStackTrace()[0].toString();
         model.setTraceStack(traceStack);
         // 获取当前机器的Ip
-        try {
-            InetAddress address = InetAddress.getLocalHost();
-            String hostAddress = address.getHostAddress();
-            model.setHost(hostAddress);
-        } catch (UnknownHostException e1) {
-            logger.error(e1.getMessage());
-        }
+        String localhostStr = NetUtil.getLocalhostStr();
+        model.setHost(localhostStr);
 
         // 发送到MQ
         Producer producer = new QueueProducer(false, Constant.ALAEM_QUEUE_NAME);
