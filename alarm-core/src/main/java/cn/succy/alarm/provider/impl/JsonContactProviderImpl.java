@@ -1,17 +1,17 @@
 package cn.succy.alarm.provider.impl;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.util.CharsetUtil;
+import cn.hutool.json.JSONArray;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import cn.succy.alarm.config.ConfigManager;
 import cn.succy.alarm.config.ProviderConfig;
 import cn.succy.alarm.provider.ContactProvider;
 import cn.succy.alarm.receiver.Contact;
 import cn.succy.alarm.receiver.ContactGroup;
 import cn.succy.alarm.receiver.Receiver;
-import com.xiaoleilu.hutool.collection.CollUtil;
-import com.xiaoleilu.hutool.io.FileUtil;
-import com.xiaoleilu.hutool.json.JSONArray;
-import com.xiaoleilu.hutool.json.JSONObject;
-import com.xiaoleilu.hutool.json.JSONUtil;
-import com.xiaoleilu.hutool.util.CharsetUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -73,7 +73,7 @@ public class JsonContactProviderImpl implements ContactProvider {
         contactGroup.setGroupId(groupJson.getStr(Key.GROUP_ID));
         contactGroup.setGroupName(groupJson.getStr(Key.GROUP_NAME));
 
-        List<String> contactIdList = CollUtil.distinct ((List<String>) groupJson.get(Key.CONTACTS));
+        List<String> contactIdList = CollUtil.distinct((List<String>) groupJson.get(Key.CONTACTS));
         List<Contact> contactList = new ArrayList<>();
         for (String contactId : contactIdList) {
             for (Object obj : contactArr) {

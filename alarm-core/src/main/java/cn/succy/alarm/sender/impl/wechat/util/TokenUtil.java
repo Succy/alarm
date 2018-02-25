@@ -1,10 +1,11 @@
 package cn.succy.alarm.sender.impl.wechat.util;
 
+import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import cn.succy.alarm.config.ConfigManager;
 import cn.succy.alarm.config.WeChatConfig;
-import com.xiaoleilu.hutool.http.HttpUtil;
-import com.xiaoleilu.hutool.json.JSONObject;
-import com.xiaoleilu.hutool.json.JSONUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

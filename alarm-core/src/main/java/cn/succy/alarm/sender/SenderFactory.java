@@ -1,9 +1,9 @@
 package cn.succy.alarm.sender;
 
+import cn.hutool.core.lang.Singleton;
 import cn.succy.alarm.sender.impl.EmailSenderImpl;
 import cn.succy.alarm.sender.impl.SmsSenderImpl;
 import cn.succy.alarm.sender.impl.wechat.WeChatSenderImpl;
-import com.xiaoleilu.hutool.lang.Singleton;
 
 /**
  * 发送器工厂

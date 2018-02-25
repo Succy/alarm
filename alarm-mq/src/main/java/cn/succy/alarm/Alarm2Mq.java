@@ -1,17 +1,15 @@
 package cn.succy.alarm;
 
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.thread.ThreadUtil;
+import cn.hutool.core.util.NetUtil;
 import cn.succy.alarm.config.AlarmConfig;
 import cn.succy.alarm.template.TemplateModel;
 import cn.succy.mq.producer.Producer;
 import cn.succy.mq.producer.QueueProducer;
-import com.xiaoleilu.hutool.date.DateTime;
-import com.xiaoleilu.hutool.util.NetUtil;
-import com.xiaoleilu.hutool.util.ThreadUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * 专为Mq设计的报警

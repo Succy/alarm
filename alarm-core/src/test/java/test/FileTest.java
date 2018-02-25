@@ -1,8 +1,7 @@
 package test;
 
-
-import com.xiaoleilu.hutool.io.FileUtil;
-import com.xiaoleilu.hutool.util.StrUtil;
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.util.StrUtil;
 import org.junit.Test;
 
 /**

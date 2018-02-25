@@ -1,11 +1,12 @@
 package cn.succy.alarm.template;
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.succy.alarm.config.AlarmConfig;
 import com.jfinal.kit.StrKit;
 import com.jfinal.template.Engine;
 import com.jfinal.template.Template;
-import com.xiaoleilu.hutool.io.FileUtil;
-import com.xiaoleilu.hutool.util.StrUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

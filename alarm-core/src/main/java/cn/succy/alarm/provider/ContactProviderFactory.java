@@ -1,10 +1,10 @@
 package cn.succy.alarm.provider;
 
+import cn.hutool.core.lang.Singleton;
 import cn.succy.alarm.config.ConfigManager;
 import cn.succy.alarm.config.ProviderConfig;
 import cn.succy.alarm.provider.impl.JdbcContactProviderImpl;
 import cn.succy.alarm.provider.impl.JsonContactProviderImpl;
-import com.xiaoleilu.hutool.lang.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

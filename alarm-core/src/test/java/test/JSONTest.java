@@ -1,10 +1,11 @@
 package test;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 import cn.succy.alarm.sender.impl.wechat.TextMessage;
 import cn.succy.alarm.sender.impl.wechat.util.TokenUtil;
-import com.xiaoleilu.hutool.collection.CollUtil;
-import com.xiaoleilu.hutool.json.JSON;
-import com.xiaoleilu.hutool.json.JSONUtil;
+
 import org.junit.Test;
 
 import java.util.HashSet;

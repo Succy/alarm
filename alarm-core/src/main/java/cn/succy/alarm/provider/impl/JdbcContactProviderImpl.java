@@ -1,5 +1,9 @@
 package cn.succy.alarm.provider.impl;
 
+import cn.hutool.db.Entity;
+import cn.hutool.db.SqlRunner;
+import cn.hutool.db.ds.simple.SimpleDataSource;
+import cn.hutool.db.handler.RsHandler;
 import cn.succy.alarm.config.ConfigManager;
 import cn.succy.alarm.config.ProviderConfig;
 import cn.succy.alarm.Constant;
@@ -7,10 +11,7 @@ import cn.succy.alarm.provider.ContactProvider;
 import cn.succy.alarm.receiver.Contact;
 import cn.succy.alarm.receiver.ContactGroup;
 import cn.succy.alarm.receiver.Receiver;
-import com.xiaoleilu.hutool.db.Entity;
-import com.xiaoleilu.hutool.db.SqlRunner;
-import com.xiaoleilu.hutool.db.ds.simple.SimpleDataSource;
-import com.xiaoleilu.hutool.db.handler.RsHandler;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

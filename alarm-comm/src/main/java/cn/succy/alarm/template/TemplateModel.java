@@ -1,8 +1,9 @@
 package cn.succy.alarm.template;
 
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.succy.alarm.Level;
-import com.xiaoleilu.hutool.bean.BeanUtil;
-import com.xiaoleilu.hutool.util.StrUtil;
+
 
 import java.io.Serializable;
 import java.util.Map;

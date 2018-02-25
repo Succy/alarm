@@ -6,10 +6,6 @@ package test;
  **/
 
 public class ThreadTest {
-    //@Test
-    //public void test() {
-    //    new Thread(new Task()).start();
-    //}
 
     public static void main(String[] args) {
         new Thread(new Task()).start();

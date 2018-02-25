@@ -1,5 +1,11 @@
 package cn.succy.alarm.sender.impl.wechat;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.http.HttpRequest;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import cn.succy.alarm.config.ConfigManager;
 import cn.succy.alarm.config.WeChatConfig;
 import cn.succy.alarm.provider.ContactProvider;
@@ -10,12 +16,7 @@ import cn.succy.alarm.sender.impl.wechat.util.TokenUtil;
 import cn.succy.alarm.sender.impl.wechat.util.WeChatConstant;
 import cn.succy.alarm.template.TemplateManager;
 import cn.succy.alarm.template.TemplateModel;
-import com.xiaoleilu.hutool.collection.CollUtil;
-import com.xiaoleilu.hutool.http.HttpRequest;
-import com.xiaoleilu.hutool.json.JSON;
-import com.xiaoleilu.hutool.json.JSONObject;
-import com.xiaoleilu.hutool.json.JSONUtil;
-import com.xiaoleilu.hutool.util.StrUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -60,7 +61,7 @@ public class WeChatSenderImpl implements Sender {
         int errcode = respJson.getInt(WeChatConstant.ERR_CODE);
         if (errcode != WeChatConstant.SUCCESS_CODE) {
             // 如果是token失效，则刷新token
-            if (errcode == WeChatConstant.INVAILD_TOKEN_CODE) {
+            if (errcode == WeChatConstant.INVALID_TOKEN_CODE) {
                 TokenUtil.initToken();
             }
             // 如果再一次重试不成功，直接抛出运行时异常

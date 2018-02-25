@@ -1,5 +1,6 @@
 package cn.succy.alarm.sender.impl;
 
+import cn.hutool.core.util.StrUtil;
 import cn.succy.alarm.config.AlarmConfig;
 import cn.succy.alarm.config.ConfigManager;
 import cn.succy.alarm.config.EmailSenderConfig;
@@ -9,7 +10,6 @@ import cn.succy.alarm.receiver.Receiver;
 import cn.succy.alarm.sender.Sender;
 import cn.succy.alarm.template.TemplateManager;
 import cn.succy.alarm.template.TemplateModel;
-import com.xiaoleilu.hutool.util.StrUtil;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.slf4j.Logger;
@@ -44,10 +44,10 @@ public class EmailSenderImpl implements Sender {
         email.setAuthentication(config.getUsername(), config.getPassword());
         // 邮件的字符集
         email.setCharset(config.getCharset());
-        boolean isUserSSL = config.isUseSSL();
+        boolean useSSL = config.isUseSSL();
         // 是否开启ssl
-        email.setSSLOnConnect(isUserSSL);
-        if (isUserSSL) {
+        email.setSSLOnConnect(useSSL);
+        if (useSSL) {
             email.setSslSmtpPort(config.getSslPort());
         }
 

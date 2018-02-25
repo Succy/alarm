@@ -1,11 +1,11 @@
 package test;
 
+import cn.hutool.core.lang.Console;
 import cn.succy.alarm.Constant;
 import cn.succy.alarm.template.TemplateManager;
 import cn.succy.alarm.template.TemplateModel;
 import cn.succy.mq.consumer.Consumer;
 import cn.succy.mq.consumer.QueueConsumer;
-import com.xiaoleilu.hutool.lang.Console;
 import org.junit.Test;
 
 import javax.jms.JMSException;

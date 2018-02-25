@@ -1,13 +1,13 @@
 package cn.succy.alarm.config;
 
-import com.xiaoleilu.hutool.bean.BeanUtil;
-import com.xiaoleilu.hutool.convert.Convert;
-import com.xiaoleilu.hutool.lang.Filter;
-import com.xiaoleilu.hutool.setting.dialect.Props;
-import com.xiaoleilu.hutool.util.CharsetUtil;
-import com.xiaoleilu.hutool.util.ClassUtil;
-import com.xiaoleilu.hutool.util.ReflectUtil;
-import com.xiaoleilu.hutool.util.StrUtil;
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.convert.Convert;
+import cn.hutool.core.lang.Filter;
+import cn.hutool.core.util.CharsetUtil;
+import cn.hutool.core.util.ClassUtil;
+import cn.hutool.core.util.ReflectUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.setting.dialect.Props;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

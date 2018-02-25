@@ -20,5 +20,5 @@ public interface WeChatConstant {
 
     String ERR_CODE = "errcode";
     int SUCCESS_CODE = 0;
-    int INVAILD_TOKEN_CODE = 40014;
+    int INVALID_TOKEN_CODE = 40014;
 }

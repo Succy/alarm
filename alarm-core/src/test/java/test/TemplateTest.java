@@ -1,11 +1,11 @@
 package test;
 
+import cn.hutool.core.date.DateTime;
+import cn.hutool.core.util.StrUtil;
 import cn.succy.alarm.Level;
 import cn.succy.alarm.config.AlarmConfig;
 import cn.succy.alarm.template.TemplateManager;
 import cn.succy.alarm.template.TemplateModel;
-import com.xiaoleilu.hutool.date.DateTime;
-import com.xiaoleilu.hutool.util.StrUtil;
 import org.junit.Test;
 
 /**
